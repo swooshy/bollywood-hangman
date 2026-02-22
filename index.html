@@ -245,7 +245,7 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
 .word-group { display: flex; gap: 4px; }
 .tile {
   width: clamp(18px, 5vw, 26px); height: clamp(26px, 6.5vw, 32px);
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid #666666;
   display: flex; align-items: center; justify-content: center;
   font-size: clamp(13px, 3.3vw, 17px); font-weight: 600;
   color: var(--text); text-transform: uppercase;
@@ -660,13 +660,13 @@ function drawHangman(canvas, wrongCount, dead) {
   ctx.clearRect(0,0,W,H);
   ctx.save(); ctx.scale(W/200, H/140);
   ctx.lineCap='round'; ctx.lineJoin='round'; ctx.lineWidth=3;
-  ctx.strokeStyle = dead ? '#664444' : '#484848';
+  ctx.strokeStyle = dead ? '#cc4444' : '#e0e0e0';
   ctx.beginPath(); ctx.moveTo(20,135); ctx.lineTo(160,135); ctx.stroke();
   ctx.beginPath(); ctx.moveTo(46,135); ctx.lineTo(46,14);   ctx.stroke();
   ctx.beginPath(); ctx.moveTo(46,14);  ctx.lineTo(100,14);  ctx.stroke();
   ctx.beginPath(); ctx.moveTo(100,14); ctx.lineTo(100,26);  ctx.stroke();
   ctx.beginPath(); ctx.moveTo(46,30);  ctx.lineTo(64,14);   ctx.stroke();
-  var fc = dead ? '#e8504a' : '#c0c0c0';
+  var fc = dead ? '#ff5555' : '#ffffff';
   for (var i = 0; i < wrongCount; i++) PARTS[i](ctx, dead && i===0, fc);
   ctx.restore();
 }
